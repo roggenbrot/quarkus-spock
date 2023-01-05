@@ -1,12 +1,16 @@
 package io.quarkiverse.test.spock
 
+import groovy.transform.PackageScope
 import spock.lang.Specification
 
+import javax.enterprise.context.Dependent
 import javax.inject.Inject
 
+@Dependent
 @QuarkusSpockTest
 class InjectQuarkusSpockExtensionTest extends Specification {
 
+    @PackageScope
     @Inject
     InjectTestService injectTestService
 

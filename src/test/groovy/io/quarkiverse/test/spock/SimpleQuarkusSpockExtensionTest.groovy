@@ -2,6 +2,9 @@ package io.quarkiverse.test.spock
 
 import spock.lang.Specification
 
+import javax.enterprise.context.Dependent
+
+@Dependent
 @QuarkusSpockTest
 class SimpleQuarkusSpockExtensionTest extends Specification {
 

@@ -1,13 +1,17 @@
 package io.quarkiverse.test.spock
 
+import groovy.transform.PackageScope
 import io.quarkus.test.junit.QuarkusMock
 import spock.lang.Specification
 
+import javax.enterprise.context.Dependent
 import javax.inject.Inject
 
+@Dependent
 @QuarkusSpockTest
 class MockQuarkusSpockExtensionTest extends Specification {
 
+    @PackageScope
     @Inject
     MockTestService mockTestService
 
@@ -63,8 +67,8 @@ class MockQuarkusSpockExtensionTest extends Specification {
         result == expectedResult
         where:
         suffix     || expectedResult
-        "rocks"    || "quarkus-spock rocks event more"
-        "is great" || "quarkus-spock rocks event more"
+        "rocks"    || "quarkus-spock rocks even more"
+        "is great" || "quarkus-spock rocks even more"
     }
 
 

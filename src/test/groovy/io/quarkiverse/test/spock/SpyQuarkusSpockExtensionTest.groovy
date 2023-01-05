@@ -3,8 +3,10 @@ package io.quarkiverse.test.spock
 import io.quarkus.test.junit.QuarkusMock
 import spock.lang.Specification
 
+import javax.enterprise.context.Dependent
 import javax.inject.Inject
 
+@Dependent
 @QuarkusSpockTest
 class SpyQuarkusSpockExtensionTest extends Specification {
 
@@ -24,7 +26,7 @@ class SpyQuarkusSpockExtensionTest extends Specification {
         then: "No exception is thrown"
         noExceptionThrown()
         and: "Result has expected value"
-        result == "quarkus-spock rocks even more"
+        result == "quarkus-spock rocks"
     }
     
     def "Assert that a quarkus test case with parameters can be executed"() {
